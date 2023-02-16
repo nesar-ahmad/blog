@@ -1,0 +1,4 @@
+__pycache__/
+blog/migrations/
+my_env/
+db.sqlite3
