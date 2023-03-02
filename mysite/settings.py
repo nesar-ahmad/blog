@@ -34,6 +34,9 @@ INSTALLED_APPS = [
     # My apps
     'blog.apps.BlogConfig',
 
+    # Third party apps
+    'taggit',
+
     #  Django default apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -125,3 +128,17 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+"""
+By using this setting, Django will output all emails to the shell. 
+This is very useful for testing your application without an SMTP server.
+"""
+
+# Sneding email using Gmail
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'nesarahmad.barati@gmail.com'
+EMAIL_HOST_PASSWORD = '##################'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
