@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 1
 
 # Application definition
 
@@ -36,7 +37,11 @@ INSTALLED_APPS = [
 
     # Third party apps
     'taggit',
+    'django.contrib.postgres',
 
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    
     #  Django default apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -82,8 +87,10 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'blog',
+        'USER': 'postgres',
+        'PASSWORD': '1114',
     }
 }
 
@@ -138,7 +145,7 @@ This is very useful for testing your application without an SMTP server.
 # Sneding email using Gmail
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'nesarahmad.barati@gmail.com'
-EMAIL_HOST_PASSWORD = '##################'
+EMAIL_HOST_PASSWORD = '*****************'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
